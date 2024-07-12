@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MeliErrorPageComponent } from 'meli-error-page';
+import { authGuard } from './features/login/guards/login.guard';
 
 const routes: Routes = [
   {
@@ -12,12 +13,13 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./features/home/home.module').then(m => m.HomeModule),
+    canActivate: [authGuard],
   },
-  // {
-  //   path: 'login',
-  //   loadChildren: () =>
-  //     import('./features/login/login.module').then(m => m.LoginModule),
-  // },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./features/login/login.module').then(m => m.LoginModule),
+  },
   { path: 'error', component: MeliErrorPageComponent },
   { path: '**', redirectTo: '/error' },
 ];
