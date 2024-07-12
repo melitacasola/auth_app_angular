@@ -1,0 +1,49 @@
+@mixin flex-center(){
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition($time) {
+  transition: $time;
+}
+
+@mixin centered-grid {
+  display: grid;
+  place-content: center;
+}
+
+@mixin card-styles {
+  display: grid;
+  border-radius: $border-radius;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@mixin figcaption-styles {
+  display: grid;
+  align-items: end;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: transparent;
+  padding: $padding;
+  background: var(--c, $primary-color);
+  clip-path: inset(0 var(--_i, 100%) 0 0);
+  -webkit-mask: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  -webkit-mask-clip: text, padding-box;
+  margin: -1px;
+}
+@mixin mask($mask) {
+  -webkit-mask: $mask;
+  mask: $mask;
+}
+
+@mixin img-size($width, $height) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+}
