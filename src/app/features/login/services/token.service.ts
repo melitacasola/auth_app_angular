@@ -11,6 +11,12 @@ export class TokenService {
     sessionStorage.setItem(this.TOKEN_KEY, JSON.stringify(token));
   }
 
+  getToken(): IToken | null {
+    const tokenString = sessionStorage.getItem(this.TOKEN_KEY);
+    console.log(tokenString, 'tokenstring');
+    return tokenString ? JSON.parse(tokenString) : null;
+  }
+
   clearToken() {
     return sessionStorage.removeItem(this.TOKEN_KEY);
   }
