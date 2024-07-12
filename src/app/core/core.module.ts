@@ -6,6 +6,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadInterceptor } from './loading-overlay/interceptor/loading-overlay';
 import { NotificationInterceptor } from './notification/notification.interceptor';
 import { AuthInterceptor } from '../features/login/interceptors/auth.interceptor';
+import { ErrorInterceptor } from './interceptors/handle-error';
 
 @NgModule({
   declarations: [LoadingOverlayComponent],
@@ -18,7 +19,7 @@ import { AuthInterceptor } from '../features/login/interceptors/auth.interceptor
       multi: true,
     },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   exports: [LoadingOverlayComponent],
 })

@@ -18,7 +18,7 @@ export class NotificationInterceptor implements HttpInterceptor {
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
-      tap((event: HttpEvent<any>) => {
+      tap((event: HttpEvent<unknown>) => {
         if (event instanceof HttpResponse && event.status === 200) {
           this.toaster.success('Logged in successfully', 'Success');
         }
