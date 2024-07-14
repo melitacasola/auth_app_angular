@@ -10,9 +10,9 @@ import { environment } from '../../../../environments/environment';
 })
 export class AuthService {
   private httpClient = inject(HttpClient);
+  private tokenService = inject(TokenService);
   private url = environment.baseUrl;
   private token?: IToken;
-  private tokenService = inject(TokenService);
 
   login(loginForm: Partial<ILoginForm>): Observable<IToken> {
     return this.httpClient.post<IToken>(this.url, loginForm).pipe(

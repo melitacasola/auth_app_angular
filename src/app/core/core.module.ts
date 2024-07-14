@@ -5,8 +5,8 @@ import { LoadingOverlayComponent } from './loading-overlay/loading-overlay/loadi
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadInterceptor } from './loading-overlay/interceptor/loading-overlay';
 import { NotificationInterceptor } from './notification/notification.interceptor';
-import { AuthInterceptor } from '../features/login/interceptors/auth.interceptor';
 import { ErrorInterceptor } from './interceptors/handle-error';
+import { AuthInterceptor } from '../features/login/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [LoadingOverlayComponent],
