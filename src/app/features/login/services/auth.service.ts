@@ -3,13 +3,14 @@ import { inject, Injectable } from '@angular/core';
 import { IToken, ILoginForm } from '../../../core/interfaces/auth.interface';
 import { Observable, tap } from 'rxjs';
 import { TokenService } from './token.service';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private httpClient = inject(HttpClient);
-  private url = 'http://localhost:49220/api/login/authenticate';
+  private url = environment.baseUrl;
   private token?: IToken;
   private tokenService = inject(TokenService);
 
