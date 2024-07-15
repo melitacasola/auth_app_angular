@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { IToken, ILoginForm } from '../../../core/interfaces/auth.interface';
+
 import { Observable, tap } from 'rxjs';
+import { environment } from '../../../environments/environment.development';
+import { IToken, ILoginForm } from '../interfaces/auth.interface';
 import { TokenService } from './token.service';
-import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',

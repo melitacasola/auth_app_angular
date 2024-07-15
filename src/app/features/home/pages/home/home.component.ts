@@ -1,7 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../login/services/auth.service';
-import { TokenService } from '../../../login/services/token.service';
+
+import { TokenService } from '../../../../core/services/token.service';
+import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,6 @@ export class HomeComponent implements OnInit {
       if (roleAndName) {
         this.role = roleAndName.role;
         this.uniqueName = roleAndName.unique_name;
-        console.log(roleAndName);
 
         if (roleAndName.role === 'Administrator') {
           this.mensaje = 'soy la administradora';

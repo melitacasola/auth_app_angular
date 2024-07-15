@@ -10,7 +10,7 @@ import {
 import { LoadInterceptor } from './loading-overlay/interceptor/loading-overlay';
 import { NotificationInterceptor } from './notification/notification.interceptor';
 import { ErrorInterceptor } from './interceptors/handle-error';
-import { authInterceptor } from '../features/login/interceptors/auth.interceptor';
+import { authInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [LoadingOverlayComponent],

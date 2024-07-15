@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { AdminComponent } from './pages/adminPage/admin.component';
 import { CustomerPageComponent } from './pages/customer-page/customer-page.component';
-import { adminRoleGuard } from '../login/guards/admin-role.guard';
-import { userRoleGuard } from '../login/guards/user-role.guard';
+import { adminRoleGuard } from './guards/admin-role.guard';
+import { userRoleGuard } from './guards/user-role.guard';
 
 const routes: Routes = [
   {

@@ -1,9 +1,10 @@
-<p>customer-page works!</p>
-
-<div *ngFor="let item of customers">
-  <button>{{ item }}</button>
+<div *ngFor="let item of customers; let i = index">
+  <button (click)="selectCustomer(i + 1)">{{ item }}</button>
 </div>
 
+<app-customer
+  *ngIf="selectedCustomerIndex !== null"
+  [userId]="selectedCustomerIndex" />
 <!--
 ONINIT
 punto de partida del componente

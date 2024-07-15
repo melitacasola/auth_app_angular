@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MeliErrorPageComponent } from 'meli-error-page';
-import { authGuard } from './features/login/guards/login.guard';
+import { authGuard } from './core/guards/login.guard';
 
 const routes: Routes = [
   {

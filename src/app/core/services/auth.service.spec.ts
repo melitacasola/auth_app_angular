@@ -5,9 +5,8 @@ import {
 } from '@angular/common/http/testing';
 
 import { AuthService } from './auth.service';
-// import { TokenService } from './token.service';
-import { IToken } from '../../../core/interfaces/auth.interface';
-import { environment } from '../../../../environments/environment';
+import { environment } from '../../../environments/environment.development';
+import { IToken } from '../interfaces/auth.interface';
 
 describe('AuthService', () => {
   let authService: AuthService;

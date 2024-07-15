@@ -6,6 +6,3 @@ export interface ILoginForm {
 export interface IToken {
   access_token: string;
 }
-// export interface Token {
-//   access_token: IToken;
-// }

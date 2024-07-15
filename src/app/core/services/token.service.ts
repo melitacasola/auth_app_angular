@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IToken } from '../../../core/interfaces/auth.interface';
+import { IToken } from '../interfaces/auth.interface';
 import * as jwt_decode from 'jwt-decode';
-import { DecodedToken } from '../../../core/interfaces/role.interface';
+import { DecodedToken } from '../interfaces/role.interface';
 
 @Injectable({ providedIn: 'root' })
 export class TokenService {
