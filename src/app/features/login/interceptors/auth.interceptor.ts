@@ -36,13 +36,11 @@ import { TokenService } from '../services/token.service';
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authToken = inject(TokenService).getToken();
 
+  const stringToken = JSON.parse(authToken);
   if (authToken) {
-    console.log(authToken, 'entra????');
-
     const newReq = req.clone({
-      headers: req.headers.set('Authorization', authToken),
+      headers: req.headers.set('Authorization', stringToken),
     });
-    console.log(newReq, 'request');
     return next(newReq);
   }
   return next(req);
