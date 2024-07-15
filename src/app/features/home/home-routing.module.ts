@@ -20,7 +20,7 @@ const routes: Routes = [
         canActivate: [adminRoleGuard],
       },
       {
-        path: 'customer',
+        path: 'customers',
         component: CustomerPageComponent,
         canActivate: [userRoleGuard],
       },

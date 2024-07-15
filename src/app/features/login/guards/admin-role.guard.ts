@@ -4,10 +4,9 @@ import { Roles } from '../../../core/enums/roles';
 import { TokenService } from '../services/token.service';
 
 export const adminRoleGuard: CanActivateFn = () => {
-  const router = inject(Router);
   const storageRole = inject(TokenService);
   const user = storageRole.getRoleAndName();
-
+  const router = inject(Router);
   if (user?.role === Roles.admin) {
     return true;
   }
