@@ -9,7 +9,6 @@ import { userRoleGuard } from '../login/guards/user-role.guard';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
     children: [
       {
         path: '',

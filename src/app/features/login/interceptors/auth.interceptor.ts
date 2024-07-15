@@ -37,9 +37,12 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authToken = inject(TokenService).getToken();
 
   if (authToken) {
+    console.log(authToken, 'putoautoken');
+
     const newReq = req.clone({
-      headers: req.headers.set('X-Authentication-Token', authToken),
+      headers: req.headers.set('Authorization', authToken),
     });
+    console.log(newReq, 'new');
     return next(newReq);
   }
   return next(req);
