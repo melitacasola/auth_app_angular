@@ -23,9 +23,14 @@ export class AuthService {
     );
   }
 
-  get isLogged() {
-    return this.token ? true : false;
+  get isLogged(): boolean {
+    if (!this.tokenService.getToken()) {
+      return false;
+    } else {
+      return true;
+    }
   }
+
   logout() {
     this.tokenService.clearToken();
   }

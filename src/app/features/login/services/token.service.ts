@@ -48,6 +48,7 @@ export class TokenService {
     }
     return null;
   }
+
   clearToken() {
     return sessionStorage.removeItem(this.TOKEN_KEY);
   }

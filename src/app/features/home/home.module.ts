@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './pages/adminPage/admin/admin.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, AdminComponent],
   imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule],
 })
 export class HomeModule {}

@@ -31,6 +31,7 @@ import { CoreModule } from './core/core.module';
     }),
     TranslateModule,
   ],
+  // providers: [provideHttpClient(withInterceptors([LoadInterceptor]))],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
