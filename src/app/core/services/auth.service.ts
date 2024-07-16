@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
-import { Observable, tap } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 import { IToken, ILoginForm } from '../interfaces/auth.interface';
 import { TokenService } from './token.service';
@@ -24,11 +24,11 @@ export class AuthService {
     );
   }
 
-  get isLogged(): boolean {
+  isLogged(): Observable<boolean> {
     if (!this.tokenService.getToken()) {
-      return false;
+      return of(false);
     } else {
-      return true;
+      return of(true);
     }
   }
 
