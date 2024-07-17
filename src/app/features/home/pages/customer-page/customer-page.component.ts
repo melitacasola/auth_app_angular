@@ -1,6 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ApiRequestService } from '../../services/api-request.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
@@ -10,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CustomerPageComponent implements OnInit {
   private apiService = inject(ApiRequestService);
-  private routeActive = inject(ActivatedRoute);
+  // private routeActive = inject(ActivatedRoute);
   customers: string[] = [];
   selectedCustomerIndex: number | null = null;
 
@@ -22,7 +21,5 @@ export class CustomerPageComponent implements OnInit {
 
   selectCustomer(index: number): void {
     this.selectedCustomerIndex = index;
-    console.log(index, 'soy un duindex');
-    console.log(this.selectedCustomerIndex, 'soy un valor sleected');
   }
 }

@@ -25,9 +25,9 @@ export class HomeComponent implements OnInit {
         this.uniqueName = roleAndName.unique_name;
 
         if (roleAndName.role === 'Administrator') {
-          this.mensaje = 'soy la administradora';
+          this.mensaje = 'admin';
         } else {
-          this.mensaje = 'soy la desarrolladora';
+          this.mensaje = 'customers';
         }
       }
     } catch (error) {
@@ -40,4 +40,7 @@ export class HomeComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['./login']);
   }
+  gotToRole = (name: string) => {
+    this.router.navigate(['home/', name]);
+  };
 }

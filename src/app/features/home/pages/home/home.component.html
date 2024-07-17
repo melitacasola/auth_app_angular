@@ -1,7 +1,9 @@
-<ng-container *ngIf="mensaje">{{ mensaje }}</ng-container>
+<ng-container *ngIf="mensaje">
+  <app-shared-button [text]="mensaje" (click)="gotToRole(mensaje)" />
+</ng-container>
 
 <div>
   <button (click)="logout()"><span>Logout</span></button>
 </div>
 
-<router-outlet />
+<!-- <router-outlet /> -->

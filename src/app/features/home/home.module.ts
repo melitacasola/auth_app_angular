@@ -7,6 +7,7 @@ import { AdminComponent } from './pages/adminPage/admin.component';
 import { CustomerPageComponent } from './pages/customer-page/customer-page.component';
 import { CustomerComponent } from './pages/customer/customer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,6 @@ import { HomeComponent } from './pages/home/home.component';
     CustomerPageComponent,
     CustomerComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule],
+  imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule, SharedModule],
 })
 export class HomeModule {}

@@ -19,4 +19,8 @@ export class ApiRequestService {
   getCustomerId(id: string | number): Observable<string> {
     return this.http.get<string>(`${this.url}Customers/${id}`);
   }
+
+  getAdminsAll(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.url}Admin`).pipe(map(data => data));
+  }
 }

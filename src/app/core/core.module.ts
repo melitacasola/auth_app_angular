@@ -16,7 +16,6 @@ import { authInterceptor } from './interceptors/auth.interceptor';
   declarations: [LoadingOverlayComponent],
   imports: [CommonModule],
   providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: LoadInterceptor, multi: true },
     provideHttpClient(withInterceptors([LoadInterceptor])),
     provideHttpClient(withInterceptors([authInterceptor])),
     {
@@ -24,7 +23,7 @@ import { authInterceptor } from './interceptors/auth.interceptor';
       useClass: NotificationInterceptor,
       multi: true,
     },
-    // { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   exports: [LoadingOverlayComponent],
