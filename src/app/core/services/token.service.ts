@@ -13,7 +13,6 @@ export class TokenService {
 
   getToken(): string {
     const tokenString = sessionStorage.getItem(this.TOKEN_KEY);
-    // return tokenString ? JSON.parse(tokenString) : null;
     return tokenString as string;
   }
 

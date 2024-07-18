@@ -8,11 +8,6 @@
 // import { Observable, finalize } from 'rxjs';
 // import { LoadService } from '../loading-overlay.service';
 
-import { HttpInterceptorFn } from '@angular/common/http';
-import { inject } from '@angular/core';
-import { LoadService } from '../loading-overlay.service';
-import { finalize } from 'rxjs';
-
 // @Injectable()
 // export class LoadInterceptor implements HttpInterceptor {
 //   private loadService = inject(LoadService);
@@ -30,6 +25,11 @@ import { finalize } from 'rxjs';
 //       .pipe(finalize(() => this.loadService.hideLoader()));
 //   }
 // }
+
+import { HttpInterceptorFn } from '@angular/common/http';
+import { inject } from '@angular/core';
+import { LoadService } from '../loading-overlay.service';
+import { finalize } from 'rxjs';
 export const LoadInterceptor: HttpInterceptorFn = (req, next) => {
   const loadService = inject(LoadService);
 
